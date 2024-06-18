@@ -64,6 +64,9 @@ export default () => {
           className="controlBtn"
           disabled={!currentAnswer}
           onClick={() => {
+            // 传递答案
+            Taro.setStorageSync("answersList", answersList);
+            // 跳转结果页
             Taro.navigateTo({
               url: "/pages/result/index",
             });
