@@ -59,7 +59,7 @@ export function getBestQuestionResult(answerList, questions, question_results) {
 }
 
 // 示例数据
-const answerList = ["B","B","B","A"];
+const answerList = ["B", "B", "B", "A"];
 const questions = [
   {
     title: "你通常更喜欢",

@@ -5,12 +5,12 @@ import bg from "../../assets/bg.jpg";
 import GlobalFooter from "../../components/GlobalFooter";
 import questionResults from "../../data/question_results.json";
 import questions from "../../data/questions.json";
-import { getBestQuestionResult } from "src/utils/bizUtils";
+import { getBestQuestionResult } from "../../utils/bizUtils";
 import "./index.scss";
 
 export default () => {
   //获取答案
-  const answerList = Taro.getStorageSync("answerList");
+  const answerList = Taro.getStorageSync("answersList");
   if (!answerList || answerList.length < 1) {
     Taro.showToast({
       title: "答案为空",
@@ -18,6 +18,8 @@ export default () => {
       duration: 3000,
     });
   }
+  console.log(answerList);
+
   // 获取测试结果
   const result = getBestQuestionResult(answerList, questions, questionResults)
   return (
